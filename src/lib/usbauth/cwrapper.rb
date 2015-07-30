@@ -91,7 +91,7 @@ module Usbauth
 	    for k in 0..condlen-1
 	      cond = Struct_data.new(condptr.to_ptr + k*Struct_data.size)
 	      rconde = RData.new
-	      rdatae.anyChild = data[:anyChild]
+	      rconde.anyChild = cond[:anyChild]
 	      rconde.param = cond[:param]
 	      rconde.op = cond[:op]
 	      rconde.val = cond[:val].read_string()
@@ -140,7 +140,7 @@ module Usbauth
 	    for k in 0..rcond.length-1
 	      cond = Struct_data.new(condarr + k*Struct_data.size)
 	      rconde = rcond[k]
-	      data[:anyChild] = rdatae.anyChild
+	      cond[:anyChild] = rconde.anyChild
 	      cond[:param] = rconde.param
 	      cond[:op] = rconde.op
 	      cond[:val] = FFI::MemoryPointer.from_string(rconde.val)
