@@ -1,3 +1,7 @@
+#
+# spec file for package yast2-usbauth
+#
+# Copyright (c) 2018 Stefan Koch <stefan.koch10@gmail.com>
 # Copyright (c) 2015 SUSE LLC. All Rights Reserved.
 # Author: Stefan Koch <skoch@suse.de>
 # 
@@ -16,33 +20,35 @@
 # To contact SUSE about this file by physical or electronic mail,
 # you may find current contact information at www.suse.com
 
-Name: yast2-usbauth
-Version: 0.8
-Release: 0
-BuildArch: noarch
+Name:           yast2-usbauth
+Version:        0.8
+Release:        0
 
-BuildRoot: %{tmppath}/%{name}-%{version}-build
-Source0: %{name}-%{version}.tar.bz2
+Group:          System/YaST
+License:        GPL-2.0
 
-Requires: yast2
-Requires: yast2-ruby-bindings
-Requires: libusbauth_configparser0
-Requires: xdg-utils
-Requires: rubygem(ffi)
+BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+Source0:        %{name}-%{version}.tar.bz2
+Url:            https://github.com/kochstefan/yast-usbauth
 
-BuildRequires: update-desktop-files
-BuildRequires: yast2-ruby-bindings
-BuildRequires: yast2-devtools
-BuildRequires: yast2-branding-openSUSE
-BuildRequires: rubygem(yast-rake)
+BuildRequires:  update-desktop-files
+BuildRequires:  yast2-ruby-bindings
+BuildRequires:  yast2-devtools
+BuildRequires:  yast2-branding-openSUSE
+BuildRequires:  rubygem(yast-rake)
+Requires:       yast2
+Requires:       yast2-ruby-bindings
+Requires:       libusbauth-configparser1
+Requires:       xdg-utils
+Requires:       rubygem(ffi)
+Recommends:     usbauth
 
-Group: System/YaST
-License: GPL-2.0
-Summary: YaST tool to edit config file from usbauth
-Url: https://build.opensuse.org/package/show/home:skoch_suse/yast2-usbauth
+BuildArch:      noarch
+
+Summary:        YaST2 component for usbauth configuration
 
 %description
-YaST module that help with creating an USB firewall config file
+YaST module that helps to create an usbauth firewall config file
 
 %prep
 %setup -n %{name}-%{version}
@@ -61,6 +67,4 @@ rake install DESTDIR="%{buildroot}"
 %build
 
 %changelog
-* Tue May 5 2015 skoch@suse.de
-- initial created spec file
- 
+
