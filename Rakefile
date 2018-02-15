@@ -1,3 +1,4 @@
+# Copyright (c) 2018 Stefan Koch <stefan.koch10@gmail.com>
 # Copyright (c) 2015 SUSE LLC. All Rights Reserved.
 # Author: Stefan Koch <skoch@suse.de>
 # 
@@ -22,7 +23,7 @@
 require "yast/rake"
 
 Yast::Tasks.configuration do |conf|
-  conf.obs_project = "home:skoch_suse"
-  conf.obs_target = "openSUSE_13.2"
+  conf.obs_project = "home:kochstefan"
+  conf.obs_target = "openSUSE_Tumbleweed"
 end
 
