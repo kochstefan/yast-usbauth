@@ -42,11 +42,11 @@ class Struct_auth < FFI::Struct
 end
 
 module Usbauth
-  # CWrapper class uses the usbauth_configparser C library and wraps it into ruby style
+  # CWrapper class uses the usbauth-configparser C library and wraps it into ruby style
   class CWrapper
     extend FFI::Library
     ffi_lib 'c'
-    ffi_lib 'libusbauth_configparser.so'
+    ffi_lib 'libusbauth-configparser.so.1'
     attach_function :usbauth_config_read, [], :int
     attach_function :usbauth_config_write, [], :int
     attach_function :usbauth_config_get_auths, [:pointer, :pointer], :void
@@ -196,7 +196,7 @@ module Usbauth
     # get parameter as enum
     def self.str_to_parameter(str)
       cstr = FFI::MemoryPointer.from_string(str)
-      return usbauth_str_to_param(str)
+      return usbauth_str_to_param(cstr)
     end
     
     # get parameter as string
@@ -210,7 +210,7 @@ module Usbauth
     # get op as enum
     def self.str_to_operator(str)
       cstr = FFI::MemoryPointer.from_string(str)
-      return usbauth_str_to_op(str)
+      return usbauth_str_to_op(cstr)
     end
       
   end
