@@ -20,7 +20,7 @@
 
 
 Name:           yast2-usbauth
-Version:        0.8
+Version:        0.9
 Release:        0
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
