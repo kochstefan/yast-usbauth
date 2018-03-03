@@ -22,6 +22,10 @@
 require "usbauth/generic"
 
 module Usbauth
+  # class to manage configuration file
+  # it supports reading and writing from configuration file
+  # and converting between rule data structures and rule strings
+  # using the CWrapper class.
   class ConfigManager
     # initialize, so read config
     def initialize()

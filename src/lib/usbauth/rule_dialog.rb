@@ -26,6 +26,7 @@ require "usbauth/generic"
 require "usbauth/popup_dialog"
 
 module Usbauth
+  # dialog to show all rule elements: rule type and rule attributes (parameter, operator, value).
   class RuleDialog
     include Yast::UIShortcuts
     

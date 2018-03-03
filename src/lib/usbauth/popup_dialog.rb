@@ -25,6 +25,7 @@ Yast.import "Label"
 require "usbauth/generic"
 
 module Usbauth
+  # dialog to edit rule type and rule attributes (parameter, operator, value)
   class PopupDialog
     include Yast::UIShortcuts
     

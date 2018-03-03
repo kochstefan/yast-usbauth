@@ -28,6 +28,7 @@ require "usbauth/config_manager"
 require "usbauth/rule_dialog"
 
 module Usbauth
+  # entry dialog that show all rules from the configuration file
   class UsbauthDialog
     include Yast::UIShortcuts
     
