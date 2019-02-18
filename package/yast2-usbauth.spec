@@ -28,7 +28,6 @@ Source0:        %{name}-%{version}.tar.bz2
 Url:            https://github.com/kochstefan/yast-usbauth
 
 BuildRequires:  update-desktop-files
-BuildRequires:  yast2-branding-openSUSE
 BuildRequires:  yast2-devtools
 BuildRequires:  yast2-ruby-bindings
 BuildRequires:  rubygem(yast-rake)
